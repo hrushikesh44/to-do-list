@@ -38,4 +38,5 @@ let currentIndex = 3;
       if (element) {
         element.parentNode.removeChild(element);
       }
+      currentIndex--;
     }
