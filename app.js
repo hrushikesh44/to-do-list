@@ -1,34 +1,39 @@
-const taskInput = document.querySelector("#to-do");
-const addButton = document.querySelector("#add-btn");
-const deleteButton = document.querySelector(".delete-btn");
-const todoList = document.querySelector(".task-list");
+let currentIndex = 3;
 
-function addTodo() {
-    const taskValue = taskInput.value ;
-    if (taskValue == '') {
-        alert ("Enter your task in Input Area");
-    }else{
-        console.log(taskValue);
+    function addTodo() {
+      const inputEl = document.getElementById("inp");
+      const todoText = inputEl.value.trim();
 
-        const list = document.createElement("li");
-        list.className = "task-list";
-        const taskList = document.createTextNode(taskValue);
-        list.appendChild(taskList);
-        document.getElementById("list-container").appendChild(list);
+      if (todoText === '') {
+        alert('Please enter a todo item.');
+        return;
+      }
 
-        const deleteBtn = document.createElement("button");
-        deleteBtn.className = "delete-btn"
-        deleteBtn.innerText = "Delete";
-        list.appendChild(deleteBtn);
-        deleteBtn.onclick = remo
+      const parentEl = document.getElementById("todos");
+
+      const newTodo = document.createElement('div');
+      newTodo.setAttribute("id", 'todo-' + currentIndex);
+
+      const newHeading = document.createElement('h4');
+      newHeading.textContent = currentIndex + '. ' + todoText;
+
+      const newButton = document.createElement('button');
+      newButton.textContent = 'Delete';
+      newButton.setAttribute("onclick", "deleteTodo(" + currentIndex + ")");
+
+      newTodo.appendChild(newHeading);
+      newTodo.appendChild(newButton);
+
+      parentEl.appendChild(newTodo);
+
+      currentIndex++;
+
+      inputEl.value = '';
     }
 
-}
-
-addButton.addEventListener("click", addTodo);
-deleteButton.addEventListener("click", function(){
-    console.log("delete button is clicked");
-    // document.getElementsByClassName
-})
-
-
+    function deleteTodo(index) {
+      const element = document.getElementById("todo-" + index);
+      if (element) {
+        element.parentNode.removeChild(element);
+      }
+    }
