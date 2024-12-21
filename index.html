@@ -10,18 +10,18 @@
 <body>
   <h1>Todo list</h1>
   <div id="todos">
-    <div id="todo-1">
+    <div class="taskdiv" id="todo-1">
       <h4>1. Take class</h4>
-      <button onclick="deleteTodo(1)">Delete</button>
+      <button class="delete-btn" onclick="deleteTodo(1)">Delete</button>
     </div>
-    <div id="todo-2">
+    <div class="taskdiv" id="todo-2">
       <h4>2. Go out to eat</h4>
-      <button onclick="deleteTodo(2)">Delete</button>
+      <button class="delete-btn" onclick="deleteTodo(2)">Delete</button>
     </div>
   </div>
-  <div>
-    <input id="inp" type="text">
-    <button onclick="addTodo()">Add Todo</button>
+  <div class="inputdiv">
+    <input id="inp" type="text" placeholder="Enter your task...">
+    <button class="add-btn" onclick="addTodo()">Add Todo</button>
   </div>
 </body>
 <script src="app.js"></script>

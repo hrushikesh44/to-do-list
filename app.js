@@ -12,6 +12,7 @@ let currentIndex = 3;
       const parentEl = document.getElementById("todos");
 
       const newTodo = document.createElement('div');
+      newTodo.className = "taskdiv";
       newTodo.setAttribute("id", 'todo-' + currentIndex);
 
       const newHeading = document.createElement('h4');
@@ -19,6 +20,7 @@ let currentIndex = 3;
 
       const newButton = document.createElement('button');
       newButton.textContent = 'Delete';
+      newButton.className = "delete-btn";
       newButton.setAttribute("onclick", "deleteTodo(" + currentIndex + ")");
 
       newTodo.appendChild(newHeading);
