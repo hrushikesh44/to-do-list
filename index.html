@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to-do list</title>
-    <link rel="stylesheet" href="style.css" >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Todo List</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+<link rel="stylesheet" href="style.css" >
 <body>
-    <h1> TO DO LIST</h1>
-    <div class="header-container">
-        <input type="text" id="to-do" placeholder="Add new task....">
-        <button id="add-btn">ADD TASK</button>
+  <h1>Todo list</h1>
+  <div id="todos">
+    <div id="todo-1">
+      <h4>1. Take class</h4>
+      <button onclick="deleteTodo(1)">Delete</button>
     </div>
-    <div id="list-container">
-        <li class="task-list" >Go to Gym
-            <button class="delete-btn" >Delete</button>
-        </li>
+    <div id="todo-2">
+      <h4>2. Go out to eat</h4>
+      <button onclick="deleteTodo(2)">Delete</button>
     </div>
-    <script src="app.js"></script>
+  </div>
+  <div>
+    <input id="inp" type="text">
+    <button onclick="addTodo()">Add Todo</button>
+  </div>
 </body>
+<script src="app.js"></script>
 </html>
