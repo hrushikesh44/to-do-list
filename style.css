@@ -21,11 +21,13 @@ h4{
 }
 
 .taskdiv {
+    margin-top: 25px;
     display: flex;
     justify-content: space-evenly;
 }
 
 .inputdiv{
+    margin-top: 20px;
     font-size: 50px;
     margin-left: 180px;
     padding: 0.5rem;

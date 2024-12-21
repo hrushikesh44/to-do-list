@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="style.css" >
 <body>
   <h1>Todo list</h1>
+  <div class="inputdiv">
+    <input id="inp" type="text" placeholder="Enter your task...">
+    <button class="add-btn" onclick="addTodo()">Add Todo</button>
+  </div>
   <div id="todos">
     <div class="taskdiv" id="todo-1">
       <h4>1. Take class</h4>
@@ -18,10 +22,6 @@
       <h4>2. Go out to eat</h4>
       <button class="delete-btn" onclick="deleteTodo(2)">Delete</button>
     </div>
-  </div>
-  <div class="inputdiv">
-    <input id="inp" type="text" placeholder="Enter your task...">
-    <button class="add-btn" onclick="addTodo()">Add Todo</button>
   </div>
 </body>
 <script src="app.js"></script>
