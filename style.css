@@ -6,7 +6,7 @@
 body {
     margin: 1rem;
     padding: 1rem;
-    background-color: azure;
+    background-color: rgb(240, 255, 255);
 }
 
 h1{
@@ -31,10 +31,22 @@ h1{
     cursor: pointer;
 }
 
-.list-container {
+#list-container {
     margin-top: 1rem;
     padding: 3rem;
     font-size: 2rem;
-    background-color: rgb(255, 223, 223);
+    background-color: rgb(220, 240, 255);
     max-height: 90vh;
+}
+
+.delete-btn{
+    font-size: 25px;
+    background-color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.task-list{
+    display: flex;
+    justify-content: space-between;
 }
