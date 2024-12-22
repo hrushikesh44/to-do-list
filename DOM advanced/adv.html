@@ -1,0 +1,50 @@
+<body>
+    <div id="root"></div>
+        <div>
+            <input type="text" placeholder="enter your task"/>
+            <button onclick="addTodo()">Add todo!</button>
+        </div>
+    <script>
+        let ctr = 2;
+        let todos = [{
+            id: 1,
+            title: "Go to gym"
+        }]
+
+        function addTodo(){
+            todos.push({
+                id: ctr,
+                title: document.querySelector("input").value
+            })
+            render(todos);
+            ctr++;
+        }
+
+        // function deleteTodo() {
+        //     const element = document.getElementById("todo" + todo.id);
+        //       if (element) {
+        //            element.parentNode.removeChild(element);
+        //         } 
+        // }
+
+        function render(todos){
+            const todoList = document.getElementById("root");
+            todoList.innerHTML = "";
+
+            todos.forEach(todo => {
+                const divEl = document.createElement("div");
+                const h1El = document.createElement("h4");
+                const delbtn = document.createElement("button");
+                h1El.textContent = todo.title;
+                delbtn.innerHTML = "Delete";
+                divEl.appendChild(h1El);
+                divEl.appendChild(delbtn);
+                divEl.setAttribute("id", "todo" + todo.id);
+                todoList.appendChild(divEl);
+
+                // delbtn.addEventListener("click", deleteTodo);
+            });
+        }
+        render(todos);
+    </script>
+</body>
